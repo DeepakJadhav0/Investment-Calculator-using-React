@@ -15,7 +15,7 @@ function App() {
         setuserInput((prevUserInpur) => {
             return {
                 ...prevUserInpur,
-                [inputIdentifier]:newValue
+                [inputIdentifier]: +newValue
             }
         })
     }
