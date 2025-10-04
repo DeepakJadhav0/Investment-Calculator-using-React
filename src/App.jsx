@@ -11,6 +11,8 @@ function App() {
         duration : 10,
     })
 
+    let isInputValid = userInput.duration >= 1
+
     function handelInputChange(inputIdentifier , newValue ){
         setuserInput((prevUserInpur) => {
             return {
@@ -24,7 +26,8 @@ function App() {
     <>
     <Header/>
     <UserInput userInput={userInput} handelInputChange={handelInputChange}/>
-    <Result input={userInput}/>
+    {isInputValid ?   <Result input={userInput}/> : <p className="center"> Please Enter Duration Greater Than Zero </p>}
+  
     </>
   )
 }
